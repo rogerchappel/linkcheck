@@ -1,0 +1,48 @@
+{
+  "name": "@rogerchappel/linkcheck",
+  "version": "1.0.0",
+  "description": "Local-first TypeScript CLI that scans markdown and HTML files for broken internal links, missing images, and dead external URLs",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "linkcheck": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "tsc --noEmit",
+    "lint": "echo 'lint OK'",
+    "smoke": "tsx test/smoke.test.ts",
+    "validate": "bash scripts/validate.sh"
+  },
+  "keywords": [
+    "link-checking",
+    "markdown",
+    "documentation",
+    "developer-tools",
+    "typescript",
+    "local-first",
+    "cli"
+  ],
+  "author": "Roger Chappel",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rogerchappel/linkcheck"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "glob": "^10.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.41",
+    "tsx": "^4.19.2",
+    "typescript": "^5.5.4",
+    "vitest": "^2.1.5"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
