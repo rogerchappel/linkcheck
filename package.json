@@ -15,6 +15,8 @@
     "check": "tsc --noEmit",
     "lint": "echo 'lint OK'",
     "smoke": "tsx test/smoke.test.ts",
+    "package:smoke": "npm pack --dry-run",
+    "release:check": "npm run check && npm test && npm run build && npm run smoke && npm run package:smoke",
     "validate": "bash scripts/validate.sh"
   },
   "keywords": [
@@ -28,6 +30,10 @@
   ],
   "author": "Roger Chappel",
   "license": "MIT",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/rogerchappel/linkcheck"
