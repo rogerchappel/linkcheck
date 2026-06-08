@@ -157,6 +157,17 @@ npm run smoke       # CLI smoke tests
 npm run validate    # Full validation
 ```
 
+Before publishing or cutting a release candidate, run:
+
+```bash
+npm run release:check
+npm run package:smoke
+```
+
+`release:check` runs type checking, tests, build, smoke coverage, and a dry-run
+package check. The package also includes `LICENSE` and `SECURITY.md` so npm
+consumers receive the same trust and reporting metadata as the repository.
+
 ## Technical Details
 
 - **TypeScript** with strict mode
