@@ -168,3 +168,9 @@ npm run validate    # Full validation
 ## License
 
 MIT
+
+Release verification scripts not already covered above:
+
+- `npm run lint` - echo 'lint OK'
+- `npm run package:smoke` - npm pack --dry-run
+- `npm run release:check` - npm run check && npm test && npm run build && npm run smoke && npm run package:smoke
