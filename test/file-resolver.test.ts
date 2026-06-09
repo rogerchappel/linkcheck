@@ -49,7 +49,7 @@ describe('resolveLinkPath', () => {
 
 describe('fileExists', () => {
   it('returns true for existing files', () => {
-    expect(fileExists('/Users/roger/Developer/my-opensource/linkcheck/package.json')).toBe(true);
+    expect(fileExists(new URL('../package.json', import.meta.url).pathname)).toBe(true);
   });
 
   it('returns false for non-existent files', () => {
