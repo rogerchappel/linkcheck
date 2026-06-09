@@ -1,5 +1,9 @@
 import { describe, it, expect, beforeAll, afterAll } from 'vitest';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 import { resolveLinkPath, fileExists } from '../src/file-resolver.js';
+
+const fixtureRoot = dirname(fileURLToPath(import.meta.url));
 
 describe('resolveLinkPath', () => {
   it('identifies external URLs', () => {
@@ -49,7 +53,7 @@ describe('resolveLinkPath', () => {
 
 describe('fileExists', () => {
   it('returns true for existing files', () => {
-    expect(fileExists(new URL('../package.json', import.meta.url).pathname)).toBe(true);
+    expect(fileExists(join(fixtureRoot, '..', 'package.json'))).toBe(true);
   });
 
   it('returns false for non-existent files', () => {
