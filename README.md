@@ -17,7 +17,7 @@ npm install -g @rogerchappel/linkcheck
 Or use directly with npx:
 
 ```bash
-npx tsx ./src/cli.ts scan ./docs
+npx @rogerchappel/linkcheck scan ./docs
 ```
 
 ## Quick Start
@@ -95,8 +95,22 @@ linkcheck exits with code `1` when broken links are found, making it drop-in rea
 ```yaml
 # GitHub Actions
 - name: Check links
-  run: npx linkcheck scan ./docs --format json
+  run: npx @rogerchappel/linkcheck scan ./docs --format json
 ```
+
+## Example Fixture
+
+The `examples/sample-docs` directory contains a small documentation tree with
+both healthy links and intentional failures. After building the package, run:
+
+```bash
+npm run build
+node dist/cli.js scan examples/sample-docs --format json
+```
+
+The command should report the intentional missing page and missing anchor. It is
+useful when checking release artifacts because it exercises the packaged CLI
+against real files.
 
 ## Example Output
 
@@ -154,8 +168,17 @@ npm run test        # Run tests
 npm run check       # Type check
 npm run build       # Compile to dist/
 npm run smoke       # CLI smoke tests
+npm run package:smoke # Dry-run npm package contents
+npm run release:check # Full release-candidate verification
 npm run validate    # Full validation
 ```
+
+## Package Contents
+
+The npm package allowlist includes the built CLI/library files, the sample
+fixture, README, license, security policy, changelog, and contribution guide.
+Run `npm run package:smoke` before publishing to confirm the tarball still
+matches that release surface.
 
 Before publishing or cutting a release candidate, run:
 
