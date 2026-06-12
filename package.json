@@ -32,9 +32,12 @@
   "license": "MIT",
   "files": [
     "dist",
+    "examples",
     "README.md",
     "LICENSE",
-    "SECURITY.md"
+    "SECURITY.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md"
   ],
   "repository": {
     "type": "git",
