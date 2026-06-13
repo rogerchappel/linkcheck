@@ -36,6 +36,17 @@ linkcheck scan ./docs --ignore localhost --ignore example.com
 linkcheck scan ./docs --format json
 ```
 
+## Runnable Demo
+
+Run the committed fixture wiki scan:
+
+```bash
+bash demo/run-wiki-scan.sh
+```
+
+The script builds the CLI, scans `src/fixtures/wiki`, and prints the generated
+JSON report path. See `docs/tutorials/scan-a-docs-wiki.md` for the full recipe.
+
 ## CLI Reference
 
 ### `linkcheck scan <path>`
