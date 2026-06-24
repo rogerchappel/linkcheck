@@ -32,6 +32,8 @@
   "license": "MIT",
   "files": [
     "dist",
+    "demo",
+    "docs/tutorials",
     "examples",
     "README.md",
     "LICENSE",
