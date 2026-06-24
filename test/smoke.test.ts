@@ -135,6 +135,35 @@ runTest('report command fails without prior scan', () => {
   }
 });
 
+runTest('package manifest keeps release files allowlisted', () => {
+  const manifest = JSON.parse(readFileSync(resolve(PROJECT, 'package.json'), 'utf-8'));
+  const requiredFiles = [
+    'dist',
+    'examples',
+    'README.md',
+    'LICENSE',
+    'SECURITY.md',
+    'CHANGELOG.md',
+    'CONTRIBUTING.md',
+  ];
+
+  if (manifest.bin?.linkcheck !== 'dist/cli.js') {
+    throw new Error('bin.linkcheck must point at dist/cli.js');
+  }
+
+  for (const file of requiredFiles) {
+    if (!manifest.files?.includes(file)) {
+      throw new Error(`package files allowlist is missing ${file}`);
+    }
+  }
+
+  for (const script of ['check', 'test', 'build', 'smoke', 'package:smoke', 'release:check']) {
+    if (!manifest.scripts?.[script]) {
+      throw new Error(`package scripts missing ${script}`);
+    }
+  }
+});
+
 // Cleanup
 try {
   rmSync(resolve(FIXTURES, '.linkcheck-cache'), { recursive: true, force: true });
