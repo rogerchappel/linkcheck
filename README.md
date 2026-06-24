@@ -186,10 +186,10 @@ npm run validate    # Full validation
 
 ## Package Contents
 
-The npm package allowlist includes the built CLI/library files, the sample
-fixture, README, license, security policy, changelog, and contribution guide.
-Run `npm run package:smoke` before publishing to confirm the tarball still
-matches that release surface.
+The npm package allowlist includes the built CLI/library files, sample fixture,
+README, license, security policy, changelog, contribution guide, runnable demo
+script, and tutorial referenced above. Run `npm run package:smoke` before
+publishing to confirm the tarball still matches that release surface.
 
 Before publishing or cutting a release candidate, run:
 
