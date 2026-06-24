@@ -15,7 +15,7 @@
     "check": "tsc --noEmit",
     "lint": "echo 'lint OK'",
     "smoke": "tsx test/smoke.test.ts",
-    "package:smoke": "npm pack --dry-run",
+    "package:smoke": "npm run build && node scripts/pack-smoke.js",
     "release:check": "npm run check && npm test && npm run build && npm run smoke && npm run package:smoke",
     "validate": "bash scripts/validate.sh"
   },
@@ -32,6 +32,8 @@
   "license": "MIT",
   "files": [
     "dist",
+    "demo",
+    "docs/tutorials",
     "examples",
     "README.md",
     "LICENSE",
