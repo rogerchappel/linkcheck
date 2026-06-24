@@ -1,16 +1,16 @@
 import { execFileSync } from "node:child_process";
 
 const requiredFiles = [
-  "package/dist/cli.js",
-  "package/dist/index.js",
-  "package/demo/run-wiki-scan.sh",
-  "package/docs/tutorials/scan-a-docs-wiki.md",
-  "package/examples/sample-docs/README.md",
-  "package/README.md",
-  "package/LICENSE",
-  "package/SECURITY.md",
-  "package/CONTRIBUTING.md",
-  "package/CHANGELOG.md"
+  "dist/cli.js",
+  "dist/index.js",
+  "demo/run-wiki-scan.sh",
+  "docs/tutorials/scan-a-docs-wiki.md",
+  "examples/sample-docs/README.md",
+  "README.md",
+  "LICENSE",
+  "SECURITY.md",
+  "CONTRIBUTING.md",
+  "CHANGELOG.md"
 ];
 
 const output = execFileSync("npm", ["pack", "--dry-run", "--json"], {
