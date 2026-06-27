@@ -47,6 +47,14 @@ bash demo/run-wiki-scan.sh
 The script builds the CLI, scans `src/fixtures/wiki`, and prints the generated
 JSON report path. See `docs/tutorials/scan-a-docs-wiki.md` for the full recipe.
 
+For a smaller sample-docs fixture with intentional failures:
+
+```bash
+bash demo/run-sample-docs-scan.sh
+```
+
+See `docs/tutorials/sample-docs-linkcheck.md` for the review workflow.
+
 ## CLI Reference
 
 ### `linkcheck scan <path>`
