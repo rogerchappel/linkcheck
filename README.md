@@ -92,6 +92,16 @@ Health check — verify Node version, package integrity, and ESM configuration.
 - `mailto:` and `tel:` links
 - `node_modules/`, `.git/`, `dist/`, `coverage/`
 
+## Limitations
+
+- External URL checks are opt-in and depend on the remote server accepting
+  quick validation requests. Redirects, rate limits, bot protection, and
+  temporary outages can make a healthy link look unavailable.
+- Markdown and HTML extraction is intentionally lightweight. It is designed for
+  documentation links, not arbitrary browser-rendered JavaScript applications.
+- Anchor validation normalizes common heading shapes, but unusual generated
+  heading ids may need an ignore pattern or a repository-specific fixture.
+
 ## Ignore Patterns
 
 Skip noisy or intentional broken links:
