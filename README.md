@@ -55,6 +55,14 @@ bash demo/run-sample-docs-scan.sh
 
 See `docs/tutorials/sample-docs-linkcheck.md` for the review workflow.
 
+For an all-green release-docs gate:
+
+```bash
+bash demo/run-release-docs-gate.sh
+```
+
+See `docs/tutorials/release-docs-gate.md` for the passing CI-style workflow.
+
 ## CLI Reference
 
 ### `linkcheck scan <path>`
