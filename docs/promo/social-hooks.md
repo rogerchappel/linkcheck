@@ -15,3 +15,5 @@
 - Fixture wiki: `src/fixtures/wiki`
 - Runnable script: `demo/run-wiki-scan.sh`
 - CI-friendly output: `linkcheck scan <path> --format json`
+- Passing release gate: `demo/run-release-docs-gate.sh` scans
+  `examples/release-docs` and expects zero issues.
